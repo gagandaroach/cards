@@ -6,7 +6,7 @@ import { homedir } from 'node:os';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
-import { renderScoreboard } from './scoreboard.js';
+import { renderScoreboard, THEMES } from './scoreboard.js';
 
 const OUT_DIR = process.env.CARDS_OUT_DIR ?? join(homedir(), 'cards-printables');
 
@@ -28,11 +28,15 @@ server.registerTool(
       rows: z.number().int().min(1).max(30).default(10).describe('Number of rounds (rows)'),
       title: z.string().default('Scoreboard').describe('Heading printed at the top, e.g. the game name'),
       showTotal: z.boolean().default(true).describe('Include a Total row at the bottom'),
+      theme: z
+        .enum(Object.keys(THEMES))
+        .default('classic')
+        .describe('Color theme: classic (black and grey) or india (saffron, white and green with a chakra watermark)'),
       filename: z.string().optional().describe('Output file name (defaults to a slug of the title)'),
     },
   },
-  async ({ players, rows, title, showTotal, filename }) => {
-    const html = renderScoreboard({ players, rows, title, showTotal });
+  async ({ players, rows, title, showTotal, theme, filename }) => {
+    const html = renderScoreboard({ players, rows, title, showTotal, theme });
     const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'scoreboard';
     const name = (filename ?? slug).replace(/[/\\]/g, '_').replace(/\.html$/, '') + '.html';
     mkdirSync(OUT_DIR, { recursive: true });

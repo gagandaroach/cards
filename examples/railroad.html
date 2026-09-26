@@ -6,31 +6,41 @@
   <style>
     @page { size: letter landscape; margin: 0.5in; }
     * { box-sizing: border-box; }
-    html, body { margin: 0; background: #fff; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; background: #fff; color: #1b1b3a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { font-family: Georgia, 'Times New Roman', serif; padding: 0.5in; }
     @media print { body { padding: 0; } .hint { display: none; } }
+    .stripes { display: flex; flex-direction: column; height: 0.24in; border: 1px solid #000080; margin-bottom: 0.12in; }
+    .stripes i { flex: 1; }
     header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.2in; }
-    h1 { font-size: 28pt; margin: 0; }
+    h1 { font-size: 28pt; margin: 0; color: #000080; }
     .date { font-size: 14pt; }
-    .date span { display: inline-block; width: 2.2in; border-bottom: 1.5px solid #111; }
+    .date span { display: inline-block; width: 2.2in; border-bottom: 1.5px solid #000080; }
+    .sheet { position: relative; isolation: isolate; }
+    .watermark { position: absolute; z-index: -1; inset: 0; margin: auto; width: 4.5in; height: 4.5in; opacity: 0.08; }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-    th, td { border: 1.5px solid #111; text-align: center; }
-    thead th { height: 0.65in; font-size: 16pt; background: #f1f1f1; }
-    th.round { width: 0.9in; font-size: 16pt; background: #f1f1f1; }
-    tbody td, tbody th { height: 0.36in; }
-    tfoot th, tfoot td { height: 0.6in; border-top: 4px double #111; }
+    th, td { border: 1.5px solid #000080; text-align: center; }
+    thead th { height: 0.65in; font-size: 16pt; background: #ffd9b0; color: #000080; }
+    th.round { width: 0.9in; font-size: 16pt; background: #fff3e6; }
+    thead th.round { background: #ffd9b0; }
+    tbody td, tbody th { height: 0.34in; }
+    tfoot th, tfoot td { height: 0.6in; border-top: 4px double #000080; background: #d7eed2; }
+    tfoot th.round { background: #d7eed2; color: #0b5d04; }
     th.corner { font-size: 12pt; }
     .hint { font-family: system-ui, sans-serif; color: #666; font-size: 11pt; margin-top: 0.2in; }
   </style>
 </head>
 <body>
+  <div class="stripes"><i style="background:#ff9933"></i><i style="background:#ffffff"></i><i style="background:#138808"></i></div>
   <header>
     <h1>Railroad</h1>
     <div class="date">Date: <span></span></div>
   </header>
-  <table>
-    <thead><tr><th class="round corner">Round</th><th class="player">Gary</th><th class="player">Gian</th><th class="player">Pete</th><th class="player">Indy</th><th class="player">Raj</th><th class="player">Shahi</th><th class="player">Harjeet</th></tr></thead>
-    <tbody>
+  <div class="sheet">
+    <svg class="watermark" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#000080" stroke-width="1.6">
+    <circle cx="50" cy="50" r="46" stroke-width="3"/><line x1="50" y1="50" x2="94.00" y2="50.00"/><line x1="50" y1="50" x2="92.50" y2="61.39"/><line x1="50" y1="50" x2="88.11" y2="72.00"/><line x1="50" y1="50" x2="81.11" y2="81.11"/><line x1="50" y1="50" x2="72.00" y2="88.11"/><line x1="50" y1="50" x2="61.39" y2="92.50"/><line x1="50" y1="50" x2="50.00" y2="94.00"/><line x1="50" y1="50" x2="38.61" y2="92.50"/><line x1="50" y1="50" x2="28.00" y2="88.11"/><line x1="50" y1="50" x2="18.89" y2="81.11"/><line x1="50" y1="50" x2="11.89" y2="72.00"/><line x1="50" y1="50" x2="7.50" y2="61.39"/><line x1="50" y1="50" x2="6.00" y2="50.00"/><line x1="50" y1="50" x2="7.50" y2="38.61"/><line x1="50" y1="50" x2="11.89" y2="28.00"/><line x1="50" y1="50" x2="18.89" y2="18.89"/><line x1="50" y1="50" x2="28.00" y2="11.89"/><line x1="50" y1="50" x2="38.61" y2="7.50"/><line x1="50" y1="50" x2="50.00" y2="6.00"/><line x1="50" y1="50" x2="61.39" y2="7.50"/><line x1="50" y1="50" x2="72.00" y2="11.89"/><line x1="50" y1="50" x2="81.11" y2="18.89"/><line x1="50" y1="50" x2="88.11" y2="28.00"/><line x1="50" y1="50" x2="92.50" y2="38.61"/><circle cx="50" cy="50" r="6" fill="#000080"/></g></svg>
+    <table>
+      <thead><tr><th class="round corner">Round</th><th class="player">Gary</th><th class="player">Gian</th><th class="player">Pete</th><th class="player">Indy</th><th class="player">Raj</th><th class="player">Shahi</th><th class="player">Harjeet</th></tr></thead>
+      <tbody>
         <tr><th class="round">1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -46,9 +56,10 @@
         <tr><th class="round">13</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">14</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">15</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </tbody>
-    <tfoot><tr><th class="round">Total</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
-  </table>
+      </tbody>
+      <tfoot><tr><th class="round">Total</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+    </table>
+  </div>
   <p class="hint">Print with Ctrl/⌘ + P. Landscape is set automatically.</p>
 </body>
 </html>

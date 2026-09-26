@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Usage:
 //   cards --players 7 --rows 10
-//   cards --players "Mom,Dad,Asha,Raj" --rows 10 --title "Rummy Night" --out rummy.html
+//   cards --players "Mom,Dad,Asha,Raj" --rows 10 --title "Rummy Night" --theme india --out rummy.html
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -13,6 +13,7 @@ const { values } = parseArgs({
     rows: { type: 'string', default: '10' },
     title: { type: 'string', default: 'Scoreboard' },
     out: { type: 'string', default: 'out/scoreboard.html' },
+    theme: { type: 'string', default: 'classic' },
     'no-total': { type: 'boolean', default: false },
   },
 });
@@ -25,6 +26,7 @@ const html = renderScoreboard({
   players,
   rows: Number(values.rows),
   showTotal: !values['no-total'],
+  theme: values.theme,
 });
 
 mkdirSync(dirname(values.out), { recursive: true });

@@ -4,7 +4,7 @@ Printable scoreboards for card games — for playing with family and friends at 
 
 **Just want to print one?** Open one of these PDFs and print it:
 
-- [`examples/railroad.pdf`](examples/railroad.pdf): **Railroad** for Gary, Gian, Pete, Indy, Raj, Shahi and Harjeet, 15 rounds
+- [`examples/railroad.pdf`](examples/railroad.pdf): **Railroad** for Gary, Gian, Pete, Indy, Raj, Shahi and Harjeet, 15 rounds, India theme
 - [`examples/scoreboard-7-players-10-rounds.pdf`](examples/scoreboard-7-players-10-rounds.pdf): blank names, 10 rounds
 
 ## Scoreboard
@@ -33,6 +33,7 @@ Open the HTML file in a browser and print (Ctrl/⌘ + P).
 | `--rows`     | `10`                  | Number of rounds                         |
 | `--title`    | `Scoreboard`          | Heading at the top                       |
 | `--out`      | `out/scoreboard.html` | Output file                              |
+| `--theme`    | `classic`             | `classic` (black and grey) or `india` (saffron, white and green, with a faint chakra watermark) |
 | `--no-total` | off                   | Leave off the Total row                  |
 
 ## MCP server

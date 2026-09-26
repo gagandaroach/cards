@@ -9,28 +9,37 @@
     html, body { margin: 0; background: #fff; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { font-family: Georgia, 'Times New Roman', serif; padding: 0.5in; }
     @media print { body { padding: 0; } .hint { display: none; } }
+    .stripes { display: flex; flex-direction: column; height: 0in; border: 1px solid #111; margin-bottom: 0.12in; }
+    .stripes i { flex: 1; }
     header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.2in; }
-    h1 { font-size: 28pt; margin: 0; }
+    h1 { font-size: 28pt; margin: 0; color: #111; }
     .date { font-size: 14pt; }
     .date span { display: inline-block; width: 2.2in; border-bottom: 1.5px solid #111; }
+    .sheet { position: relative; isolation: isolate; }
+    .watermark { position: absolute; z-index: -1; inset: 0; margin: auto; width: 4.5in; height: 4.5in; opacity: 0.08; }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     th, td { border: 1.5px solid #111; text-align: center; }
-    thead th { height: 0.65in; font-size: 16pt; background: #f1f1f1; }
+    thead th { height: 0.65in; font-size: 16pt; background: #f1f1f1; color: #111; }
     th.round { width: 0.9in; font-size: 16pt; background: #f1f1f1; }
+    thead th.round { background: #f1f1f1; }
     tbody td, tbody th { height: 0.50in; }
-    tfoot th, tfoot td { height: 0.6in; border-top: 4px double #111; }
+    tfoot th, tfoot td { height: 0.6in; border-top: 4px double #111; background: #f1f1f1; }
+    tfoot th.round { background: #f1f1f1; color: #111; }
     th.corner { font-size: 12pt; }
     .hint { font-family: system-ui, sans-serif; color: #666; font-size: 11pt; margin-top: 0.2in; }
   </style>
 </head>
 <body>
+  
   <header>
     <h1>Scoreboard</h1>
     <div class="date">Date: <span></span></div>
   </header>
-  <table>
-    <thead><tr><th class="round corner">Round</th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th></tr></thead>
-    <tbody>
+  <div class="sheet">
+    
+    <table>
+      <thead><tr><th class="round corner">Round</th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th><th class="player"></th></tr></thead>
+      <tbody>
         <tr><th class="round">1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -41,9 +50,10 @@
         <tr><th class="round">8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><th class="round">10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </tbody>
-    <tfoot><tr><th class="round">Total</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
-  </table>
+      </tbody>
+      <tfoot><tr><th class="round">Total</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+    </table>
+  </div>
   <p class="hint">Print with Ctrl/⌘ + P. Landscape is set automatically.</p>
 </body>
 </html>

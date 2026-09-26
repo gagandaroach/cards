@@ -12,7 +12,7 @@
     "example": "node src/cli.js --players 7 --rows 10 --out examples/scoreboard-7-players-10-rounds.html",
     "mcp": "node src/mcp.js",
     "test": "node --test",
-    "example:railroad": "node src/cli.js --title Railroad --players \"Gary,Gian,Pete,Indy,Raj,Shahi,Harjeet\" --rows 15 --out examples/railroad.html"
+    "example:railroad": "node src/cli.js --title Railroad --theme india --players \"Gary,Gian,Pete,Indy,Raj,Shahi,Harjeet\" --rows 15 --out examples/railroad.html"
   },
   "engines": {
     "node": ">=20"
