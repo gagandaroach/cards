@@ -1,0 +1,23 @@
+{
+  "name": "cards",
+  "version": "0.1.0",
+  "description": "Printable scoreboards for card games — CLI and MCP server",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "cards": "src/cli.js",
+    "cards-mcp": "src/mcp.js"
+  },
+  "scripts": {
+    "example": "node src/cli.js --players 7 --rows 10 --out examples/scoreboard-7-players-10-rounds.html",
+    "mcp": "node src/mcp.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "zod": "^4.6.5"
+  }
+}
