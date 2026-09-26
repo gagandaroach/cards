@@ -1,7 +1,7 @@
 {
   "name": "cards",
   "version": "0.1.0",
-  "description": "Printable scoreboards for card games — CLI and MCP server",
+  "description": "Printable scoreboards for card games \u2014 CLI and MCP server",
   "type": "module",
   "license": "MIT",
   "bin": {
@@ -11,7 +11,8 @@
   "scripts": {
     "example": "node src/cli.js --players 7 --rows 10 --out examples/scoreboard-7-players-10-rounds.html",
     "mcp": "node src/mcp.js",
-    "test": "node --test"
+    "test": "node --test",
+    "example:railroad": "node src/cli.js --title Railroad --players \"Gary,Gian,Pete,Indy,Raj,Shahi,Harjeet\" --rows 15 --out examples/railroad.html"
   },
   "engines": {
     "node": ">=20"

@@ -2,11 +2,14 @@
 
 Printable scoreboards for card games — for playing with family and friends at the table.
 
-**Just want to print one?** Open [`examples/scoreboard-7-players-10-rounds.pdf`](examples/scoreboard-7-players-10-rounds.pdf) and print it.
+**Just want to print one?** Open one of these PDFs and print it:
+
+- [`examples/railroad.pdf`](examples/railroad.pdf): **Railroad** for Gary, Gian, Pete, Indy, Raj, Shahi and Harjeet, 15 rounds
+- [`examples/scoreboard-7-players-10-rounds.pdf`](examples/scoreboard-7-players-10-rounds.pdf): blank names, 10 rounds
 
 ## Scoreboard
 
-Players are columns, rounds `1..N` are rows, with a **Total** row at the bottom. Leave the player names blank to write them in by hand, or pass names to print them. Pages with more than 4 players print in landscape.
+Players are columns, rounds `1..N` are rows, with a **Total** row at the bottom. Leave the player names blank to write them in by hand, or pass names to print them. Pages with more than 4 players print in landscape, and rows shrink as needed so every round and the Total fit on one page.
 
 ## Command line
 
@@ -48,5 +51,6 @@ Files are written to `~/cards-printables/` (override with `CARDS_OUT_DIR`).
 
 ```sh
 npm test
-npm run example   # regenerate the example HTML
+npm run example           # regenerate the blank example HTML
+npm run example:railroad  # regenerate the Railroad scoresheet
 ```

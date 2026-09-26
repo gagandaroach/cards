@@ -21,6 +21,9 @@ export function renderScoreboard({ title = 'Scoreboard', players = 7, rows = 10,
 
   // More players → landscape. Big rows either way so it's easy to write in.
   const landscape = names.length > 4;
+  // Fit every round on one page: usable height minus title, header row and Total row.
+  const bodyHeight = (landscape ? 7.5 : 10) - 0.75 - 0.65 - (showTotal ? 0.6 : 0) - 0.1;
+  const rowHeight = Math.min(0.5, bodyHeight / rows).toFixed(2);
   const headerCells = names.map((n) => `<th class="player">${escapeHtml(n)}</th>`).join('');
   const blankCells = names.map(() => '<td></td>').join('');
   const bodyRows = Array.from({ length: rows }, (_, i) => `<tr><th class="round">${i + 1}</th>${blankCells}</tr>`).join('\n        ');
@@ -45,7 +48,7 @@ export function renderScoreboard({ title = 'Scoreboard', players = 7, rows = 10,
     th, td { border: 1.5px solid #111; text-align: center; }
     thead th { height: 0.65in; font-size: 16pt; background: #f1f1f1; }
     th.round { width: 0.9in; font-size: 16pt; background: #f1f1f1; }
-    tbody td, tbody th { height: ${rows > 15 ? '0.35in' : '0.5in'}; }
+    tbody td, tbody th { height: ${rowHeight}in; }
     tfoot th, tfoot td { height: 0.6in; border-top: 4px double #111; }
     th.corner { font-size: 12pt; }
     .hint { font-family: system-ui, sans-serif; color: #666; font-size: 11pt; margin-top: 0.2in; }
